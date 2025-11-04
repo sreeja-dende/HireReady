@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-MOCK HR Interview</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <button id="nav-to-collection" class="hidden">View Feedback Collection</button>
+        <h1>AI-MOCK HR Interview</h1>
+        <div id="role-selection">
+            <label for="role-select">Select the role you are applying for:</label>
+            <select id="role-select">
+                <option value="">Choose a role...</option>
+                <option value="software-engineer">Software Engineer</option>
+                <option value="data-scientist">Data Scientist</option>
+                <option value="product-manager">Product Manager</option>
+                <option value="marketing-specialist">Marketing Specialist</option>
+                <option value="hr-manager">HR Manager</option>
+            </select>
+            <button id="start-interview">Start Interview</button>
+        </div>
+        <div id="interview-section" class="hidden">
+            <div id="video-container">
+                <div id="ai-video">
+                    <div id="ai-background">
+                        <img id="ai-avatar" src="avatar.svg" alt="AI HR Avatar">
+                    </div>
+                    <p id="ai-speaking">AI is speaking...</p>
+                </div>
+                <div id="user-video">
+                    <video id="user-stream" autoplay muted></video>
+                    <p id="user-status">User Video</p>
+                </div>
+            </div>
+            <div id="chat-container">
+                <div id="chat-messages"></div>
+                <div id="voice-controls">
+                    <button id="start-voice">Start Voice Response</button>
+                    <button id="stop-voice" disabled>Stop Voice Response</button>
+                    <p id="voice-status">Voice recognition: Inactive</p>
+                </div>
+                <div id="text-input-area">
+                    <input type="text" id="user-response" placeholder="Type your response here...">
+                    <button id="send-response">Send</button>
+                </div>
+            </div>
+
+            <div id="round-info">
+                <p>Current Round: <span id="current-round">Introduction</span></p>
+                <p>Time Remaining: <span id="timer-display">30:00</span></p>
+            </div>
+        </div>
+        <div id="feedback-section" class="hidden">
+            <h1>Your Interview Feedback</h1>
+            <div id="feedback-content"></div>
+            <div id="feedback-buttons">
+                <button id="save-feedback">Save to Feedback Collection</button>
+                <button id="back-to-start">Start New Interview</button>
+            </div>
+        </div>
+
+        <div id="feedback-collection-section" class="hidden">
+            <h1>Your Feedback Collection</h1>
+            <div id="feedback-collection-content">
+                <div id="feedback-list"></div>
+                <div id="feedback-collection-buttons">
+                    <button id="back-to-main">Back to Main</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="saved-feedback-view" class="hidden">
+            <h1>Saved Feedback Report</h1>
+            <div id="saved-feedback-content"></div>
+            <div id="saved-feedback-buttons">
+                <button id="back-to-collection">Back to Collection</button>
+                <button id="delete-feedback">Delete This Report</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

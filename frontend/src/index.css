@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Component Definitions */
+
+.card {
+  /* Apply dark background, rounded corners, shadow, and border for lift */
+  @apply bg-gray-800 rounded-xl shadow-lg border border-gray-700;
+}
+
+.btn-primary {
+  /* Apply prominent indigo button style with hover effect */
+  @apply inline-flex justify-center items-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-900 focus:ring-indigo-500 transition duration-150 ease-in-out;
+}
+
+/* Optional custom class used for hover state on resource cards */
+.hover\:bg-gray-750 {
+  background-color: #374151; /* A slightly lighter gray for hover */
+}
+
+@layer base {
+  html {
+    @apply bg-gray-900 text-white;
+  }
+  body {
+    @apply bg-gray-900 text-white;
+  }
+}
+
+@layer components {
+  .code-block {
+    @apply bg-gray-700 p-4 rounded-lg font-mono text-sm overflow-x-auto;
+  }
+}

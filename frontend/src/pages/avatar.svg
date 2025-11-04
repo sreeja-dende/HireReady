@@ -1,0 +1,51 @@
+<svg width="300" height="200" viewBox="0 0 300 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with subtle gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e8f4fd;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d1ecf1;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="faceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fdbcb4;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f4a688;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="hairGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b4513;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#654321;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="300" height="200" fill="url(#bgGradient)"/>
+
+  <!-- Hair/Head outline -->
+  <ellipse cx="150" cy="75" rx="45" ry="50" fill="url(#hairGradient)"/>
+  <ellipse cx="150" cy="75" rx="42" ry="47" fill="url(#faceGradient)"/>
+
+  <!-- Eyes -->
+  <ellipse cx="135" cy="65" rx="6" ry="4" fill="#2c3e50"/>
+  <ellipse cx="165" cy="65" rx="6" ry="4" fill="#2c3e50"/>
+  <!-- Eye highlights -->
+  <circle cx="137" cy="63" r="2" fill="#fff"/>
+  <circle cx="167" cy="63" r="2" fill="#fff"/>
+
+  <!-- Eyebrows -->
+  <path d="M128 58 Q135 55 142 58" stroke="#2c3e50" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M158 58 Q165 55 172 58" stroke="#2c3e50" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+  <!-- Nose -->
+  <ellipse cx="150" cy="75" rx="2" ry="3" fill="#e8a085"/>
+
+  <!-- Mouth - neutral expression -->
+  <path d="M140 85 Q150 90 160 85" stroke="#c0392b" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+  <!-- Shirt/Collar -->
+  <path d="M120 105 Q135 95 150 105 Q165 95 180 105 L180 130 Q150 125 120 130 Z" fill="#3498db"/>
+  <!-- Collar -->
+  <path d="M135 105 L140 115 L145 105" fill="#2980b9"/>
+  <path d="M155 105 L160 115 L165 105" fill="#2980b9"/>
+
+  <!-- Professional label -->
+  <rect x="110" y="160" width="80" height="25" rx="12" fill="#34495e"/>
+  <text x="150" y="177" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ecf0f1">HR Manager</text>
+</svg>

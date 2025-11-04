@@ -1,0 +1,58 @@
+[
+  {
+    "id": "1",
+    "title": "Resume Building Guide",
+    "description": "A comprehensive guide to building an effective resume for tech jobs.",
+    "type": "Guide",
+    "uploadedBy": {
+      "username": "placement1"
+    },
+    "fileUrl": null,
+    "createdAt": "2024-01-15T00:00:00.000Z"
+  },
+  {
+    "id": "2",
+    "title": "Interview Tips",
+    "description": "Essential tips for technical interviews and behavioral questions.",
+    "type": "Tips",
+    "uploadedBy": {
+      "username": "placement1"
+    },
+    "fileUrl": null,
+    "createdAt": "2024-01-20T00:00:00.000Z"
+  },
+  {
+    "id": "3",
+    "title": "Coding Practice Problems",
+    "description": "Collection of coding problems from top tech companies.",
+    "type": "Problems",
+    "uploadedBy": {
+      "username": "placement1"
+    },
+    "fileUrl": null,
+    "createdAt": "2024-01-25T00:00:00.000Z"
+  },
+  {
+    "id": "4",
+    "title": "Test Resource",
+    "description": "Test Description",
+    "type": "Guide",
+    "uploadedBy": {
+      "username": "placement1"
+    },
+    "fileUrl": null,
+    "createdAt": "2025-10-23T14:11:28.118Z"
+  },
+  {
+    "id": "5",
+    "title": "cognizant",
+    "description": "cognizant is hiring",
+    "type": "Company Info",
+    "uploadedBy": {
+      "username": "sowju"
+    },
+    "fileUrl": null,
+    "createdAt": "2025-10-24T03:28:58.977Z",
+    "updatedAt": "2025-10-24T03:29:08.312Z"
+  }
+]

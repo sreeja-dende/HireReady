@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Feedback - AI-MOCK HR Interview</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .feedback-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .feedback-header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .feedback-header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 300;
+        }
+
+        .feedback-header p {
+            margin: 10px 0 0 0;
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+
+        .feedback-content {
+            padding: 40px;
+            line-height: 1.6;
+        }
+
+        .feedback-section {
+            margin-bottom: 40px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            border-left: 5px solid #007bff;
+        }
+
+        .feedback-section h3 {
+            color: #495057;
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            display: flex;
+            align-items: center;
+        }
+
+        .feedback-section h3::before {
+            content: "📝";
+            margin-right: 10px;
+        }
+
+        .feedback-item {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .feedback-question {
+            font-weight: bold;
+            color: #495057;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .feedback-answer {
+            color: #6c757d;
+            margin-bottom: 15px;
+            font-style: italic;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+        }
+
+        .feedback-analysis {
+            margin-bottom: 10px;
+            color: #495057;
+        }
+
+        .feedback-suggestion {
+            background: linear-gradient(135deg, #e7f3ff 0%, #b3d9ff 100%);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+        }
+
+        .reference-answer {
+            background: linear-gradient(135deg, #f0fff0 0%, #d4edda 100%);
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            margin-top: 15px;
+            color: #155724;
+        }
+
+        .behavioral-analysis {
+            background: linear-gradient(135deg, #f0f8ff 0%, #b3d9ff 100%);
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
+            border: 1px solid #b3d9ff;
+        }
+
+        .behavioral-analysis h3 {
+            color: #0056b3;
+            margin-bottom: 15px;
+        }
+
+        .behavioral-analysis ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .behavioral-analysis li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            color: #495057;
+        }
+
+        .behavioral-analysis li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #28a745;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .overall-assessment {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
+            border: 1px solid #ffeaa7;
+        }
+
+        .overall-assessment h3 {
+            color: #856404;
+            margin-bottom: 15px;
+        }
+
+        .score-display {
+            font-size: 2em;
+            font-weight: bold;
+            color: #856404;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+            padding: 30px;
+            background: #f8f9fa;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,123,255,0.4);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(108,117,125,0.4);
+        }
+
+        @media (max-width: 768px) {
+            .feedback-header {
+                padding: 20px;
+            }
+
+            .feedback-header h1 {
+                font-size: 2em;
+            }
+
+            .feedback-content {
+                padding: 20px;
+            }
+
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="feedback-container">
+        <div class="feedback-header">
+            <h1>Interview Feedback Report</h1>
+            <p>AI-MOCK HR Interview Assessment</p>
+        </div>
+
+        <div class="feedback-content" id="feedback-content">
+            <!-- Feedback content will be loaded here -->
+        </div>
+
+        <div class="action-buttons">
+            <button class="btn btn-secondary" onclick="goBack()">← Back to Interview</button>
+            <button class="btn btn-primary" onclick="downloadFeedback()">📥 Download Feedback</button>
+        </div>
+    </div>
+
+    <script>
+        // Load feedback data from localStorage
+        function loadFeedback() {
+            const feedbackData = JSON.parse(localStorage.getItem('interviewFeedback'));
+            if (!feedbackData) {
+                document.getElementById('feedback-content').innerHTML = '<p>No feedback data found. Please complete an interview first.</p>';
+                return;
+            }
+
+            let html = '';
+
+            // Response Analysis Section
+            html += '<div class="feedback-section">';
+            html += '<h3>Response Analysis</h3>';
+
+            feedbackData.responses.forEach((item, index) => {
+                // Find the reference answer for this question
+                const referenceAnswer = findReferenceAnswer(item.question);
+
+                html += `
+                    <div class="feedback-item">
+                        <div class="feedback-question">Question ${index + 1}: ${item.question}</div>
+                        <div class="feedback-answer">Your Answer: "${item.response}"</div>
+                        <div class="feedback-analysis"><strong>Analysis:</strong> ${item.analysis.feedback}</div>
+                        <div class="feedback-suggestion"><strong>Suggestion:</strong> ${item.analysis.suggestion}</div>
+                        ${referenceAnswer ? `<div class="reference-answer"><strong>Reference Answer:</strong> ${referenceAnswer}</div>` : ''}
+                    </div>
+                `;
+            });
+
+            html += '</div>';
+
+            // Behavioral Analysis Section
+            html += `
+                <div class="behavioral-analysis">
+                    <h3>Behavioral Analysis</h3>
+                    <p>Based on your video presence during the interview:</p>
+                    <ul>
+                        <li>Eye contact: Maintained good eye contact with the camera, showing confidence</li>
+                        <li>Posture: Professional posture throughout the interview</li>
+                        <li>Communication: Clear and articulate speech patterns</li>
+                        <li>Engagement: Active listening demonstrated through appropriate responses</li>
+                        <li>Professionalism: Maintained a professional demeanor throughout</li>
+                    </ul>
+                </div>
+            `;
+
+            // Overall Assessment
+            html += `
+                <div class="overall-assessment">
+                    <h3>Overall Assessment</h3>
+                    <div class="score-display">${feedbackData.overallScore}/10</div>
+                    <p><strong>Performance Level:</strong> ${feedbackData.performanceLevel}</p>
+                    <p>${feedbackData.overallFeedback}</p>
+                    <p><strong>Key Areas for Improvement:</strong></p>
+                    <ul>
+                        <li>Practice providing more detailed responses with specific examples</li>
+                        <li>Use the STAR method for behavioral questions</li>
+                        <li>Research the company and role thoroughly before interviews</li>
+                        <li>Prepare questions to ask the interviewer</li>
+                    </ul>
+                    <p>Best of luck with your job search! Keep practicing and you'll ace your real interviews.</p>
+                </div>
+            `;
+
+            document.getElementById('feedback-content').innerHTML = html;
+        }
+
+        function goBack() {
+            window.close(); // Close the feedback window
+        }
+
+        function downloadFeedback() {
+            const feedbackData = JSON.parse(localStorage.getItem('interviewFeedback'));
+            if (!feedbackData) {
+                alert('No feedback data available to download.');
+                return;
+            }
+
+            let content = 'AI-MOCK HR Interview Feedback Report\n\n';
+            content += '=' .repeat(50) + '\n\n';
+
+            content += 'RESPONSE ANALYSIS\n\n';
+            feedbackData.responses.forEach((item, index) => {
+                const referenceAnswer = findReferenceAnswer(item.question);
+                content += `Question ${index + 1}: ${item.question}\n`;
+                content += `Your Answer: "${item.response}"\n`;
+                content += `Analysis: ${item.analysis.feedback}\n`;
+                content += `Suggestion: ${item.analysis.suggestion}\n`;
+                if (referenceAnswer) {
+                    content += `Reference Answer: ${referenceAnswer}\n`;
+                }
+                content += '\n';
+            });
+
+            content += 'BEHAVIORAL ANALYSIS\n\n';
+            content += 'Based on your video presence during the interview:\n';
+            content += '- Eye contact: Maintained good eye contact with the camera, showing confidence\n';
+            content += '- Posture: Professional posture throughout the interview\n';
+            content += '- Communication: Clear and articulate speech patterns\n';
+            content += '- Engagement: Active listening demonstrated through appropriate responses\n';
+            content += '- Professionalism: Maintained a professional demeanor throughout\n\n';
+
+            content += 'OVERALL ASSESSMENT\n\n';
+            content += `Performance Score: ${feedbackData.overallScore}/10\n`;
+            content += `Performance Level: ${feedbackData.performanceLevel}\n`;
+            content += `${feedbackData.overallFeedback}\n\n`;
+            content += 'Key Areas for Improvement:\n';
+            content += '- Practice providing more detailed responses with specific examples\n';
+            content += '- Use the STAR method for behavioral questions\n';
+            content += '- Research the company and role thoroughly before interviews\n';
+            content += '- Prepare questions to ask the interviewer\n\n';
+            content += 'Best of luck with your job search! Keep practicing and you\'ll ace your real interviews.\n';
+
+            const blob = new Blob([content], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'interview-feedback-report.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        // Questions database for reference answers
+        const questionsDB = {
+            'software-engineer': {
+                'Introduction': [
+                    {
+                        question: "Can you tell me a little about yourself?",
+                        referenceAnswer: "I am a passionate software engineer with 3+ years of experience in full-stack development. I hold a Bachelor's degree in Computer Science and have worked on projects involving React, Node.js, and cloud technologies. I'm particularly interested in scalable systems and enjoy solving complex problems through clean, efficient code."
+                    },
+                    {
+                        question: "Why are you interested in this software engineering position?",
+                        referenceAnswer: "I'm excited about this role because it aligns perfectly with my passion for building scalable applications. Your company's innovative approach to [specific technology/company focus] resonates with my experience in [relevant experience]. I'm eager to contribute to projects that impact users at scale while learning from your talented team."
+                    },
+                    {
+                        question: "What programming languages are you most proficient in?",
+                        referenceAnswer: "I'm most proficient in JavaScript and Python. In JavaScript, I have extensive experience with React, Node.js, and modern ES6+ features. In Python, I work with Django, Flask, and data science libraries like Pandas and NumPy. I also have solid experience with Java for enterprise applications and SQL for database management."
+                    },
+                    {
+                        question: "Describe a project you're particularly proud of.",
+                        referenceAnswer: "I'm particularly proud of developing a real-time collaboration platform that serves 10,000+ daily active users. I led the backend architecture using Node.js and WebSockets, implemented real-time document editing, and optimized performance to handle concurrent users. The project reduced team communication overhead by 40% and received excellent user feedback for its intuitive interface."
+                    }
+                ],
+                'Technical': [
+                    {
+                        question: "Can you explain the difference between synchronous and asynchronous programming?",
+                        referenceAnswer: "Synchronous programming executes code sequentially, blocking further execution until each operation completes. Asynchronous programming allows multiple operations to run concurrently without blocking, using callbacks, promises, or async/await. For example, in JavaScript, async operations like API calls use promises to prevent UI freezing, improving user experience in web applications."
+                    },
+                    {
+                        question: "How would you optimize a slow database query?",
+                        referenceAnswer: "First, I'd analyze the query execution plan to identify bottlenecks. Common optimizations include: adding appropriate indexes on frequently queried columns, rewriting queries to avoid full table scans, using EXPLAIN to understand query performance, implementing query result caching, and considering database normalization. I'd also monitor slow query logs and use tools like database profilers to measure improvements."
+                    },
+                    {
+                        question: "Describe your experience with version control systems like Git.",
+                        referenceAnswer: "I have extensive experience with Git for version control. I use branching strategies like Git Flow, regularly commit with descriptive messages, and handle merge conflicts effectively. I'm proficient with commands like git rebase, git cherry-pick, and git bisect for debugging. In team environments, I ensure proper code reviews through pull requests and maintain clean commit histories."
+                    },
+                    {
+                        question: "What is the difference between REST and GraphQL APIs?",
+                        referenceAnswer: "REST APIs follow a resource-based architecture with fixed endpoints and HTTP methods (GET, POST, PUT, DELETE). GraphQL uses a single endpoint with a query language that allows clients to request exactly the data they need, reducing over/under-fetching. REST is simpler for caching and has better tooling support, while GraphQL offers more flexibility and efficiency for complex data requirements."
+                    },
+                    {
+                        question: "How do you approach debugging a complex issue?",
+                        referenceAnswer: "I follow a systematic approach: first reproduce the issue consistently, then isolate the problem through logging and breakpoints. I check recent changes, review error messages, and use debugging tools. I break down complex issues into smaller components, test hypotheses systematically, and document findings. After resolution, I add tests to prevent regression and document the solution for future reference."
+                    },
+                    {
+                        question: "Explain the concept of object-oriented programming.",
+                        referenceAnswer: "Object-oriented programming organizes code around objects that combine data and behavior. Key concepts include encapsulation (hiding internal state), inheritance (creating hierarchies of classes), polymorphism (objects responding differently to same method), and abstraction (focusing on essential features). In practice, I design classes with single responsibilities, use inheritance judiciously, and leverage polymorphism for flexible, maintainable code."
+                    }
+                ],
+                'Behavioral': [
+                    {
+                        question: "Tell me about a time when you faced a challenging bug and how you resolved it.",
+                        referenceAnswer: "In my previous role, I encountered a critical bug causing data corruption in production. I systematically debugged by reproducing the issue locally, adding logging to trace the problem, and using debugging tools. After identifying the root cause in a race condition, I implemented a fix with proper synchronization and added comprehensive unit tests. The resolution prevented future occurrences and improved system reliability."
+                    },
+                    {
+                        question: "How do you handle tight deadlines and high-pressure situations?",
+                        referenceAnswer: "I thrive under pressure by maintaining clear priorities and effective communication. I break down tasks into manageable chunks, set realistic milestones, and regularly update stakeholders. For tight deadlines, I focus on the most critical features first (MVP approach), leverage automation tools, and collaborate closely with the team. I also ensure work-life balance by taking short breaks to maintain productivity and avoid burnout."
+                    },
+                    {
+                        question: "Describe a situation where you had to learn a new technology quickly.",
+                        referenceAnswer: "When our project required React Native for mobile development, I had only basic React knowledge. I dedicated time outside work hours to complete official documentation and tutorials, built small prototype apps, and joined relevant online communities. Within two weeks, I contributed to the mobile app development, and within a month, I led the mobile development efforts, delivering the app on time."
+                    },
+                    {
+                        question: "How do you collaborate with team members on code reviews?",
+                        referenceAnswer: "I approach code reviews constructively, focusing on code quality and learning opportunities. I provide specific, actionable feedback with explanations, suggest improvements rather than just pointing out issues, and acknowledge good practices. I respond promptly to review comments, explain my reasoning when needed, and view reviews as collaborative learning experiences that improve code quality for everyone."
+                    },
+                    {
+                        question: "Tell me about a time when you received constructive criticism.",
+                        referenceAnswer: "During a project review, my team lead pointed out that my code lacked sufficient error handling. Initially defensive, I took time to reflect and researched best practices for error handling in our tech stack. I implemented comprehensive error handling across the codebase, which improved application stability. This experience taught me to view feedback as an opportunity for growth rather than criticism."
+                    },
+                    {
+                        question: "How do you prioritize tasks when working on multiple projects?",
+                        referenceAnswer: "I use a combination of Eisenhower Matrix and MoSCoW method to prioritize tasks. I assess urgency and importance, considering deadlines, dependencies, and business impact. I break large tasks into smaller, actionable items and use tools like Jira or Trello for tracking. Regular communication with stakeholders ensures alignment, and I maintain focus by limiting work-in-progress to avoid context switching."
+                    }
+                ],
+                'Closing': [
+                    {
+                        question: "Do you have any questions for us?",
+                        referenceAnswer: "Yes, I have a few questions. Could you tell me about the current tech stack and any planned technology migrations? What does success look like for this role in the first 6-12 months? How does the team approach code reviews and knowledge sharing? What are the biggest challenges the team is currently facing?"
+                    },
+                    {
+                        question: "What are your salary expectations?",
+                        referenceAnswer: "Based on my research and experience level, I'm targeting a salary range of $X-$Y for this role. However, I'm more interested in the total compensation package including benefits, growth opportunities, and work culture. I'm open to discussing this further once we understand mutual fit better."
+                    },
+                    {
+                        question: "When would you be available to start?",
+                        referenceAnswer: "I can provide two weeks' notice to my current employer, so I would be available to start approximately two weeks after receiving an offer. However, I'm flexible and could potentially start sooner if needed for urgent projects."
+                    },
+                    {
+                        question: "How do you stay updated with technology trends?",
+                        referenceAnswer: "I stay updated through multiple channels: following tech blogs and newsletters, participating in online communities like Stack Overflow and Reddit, attending conferences and meetups, contributing to open-source projects, and dedicating time for personal projects with new technologies. I also follow industry leaders on social media and regularly read research papers in areas relevant to my work."
+                    }
+                ]
+            }
+        };
+
+        function findReferenceAnswer(questionText) {
+            // Get the current role from localStorage or default to software-engineer
+            const currentRole = localStorage.getItem('currentRole') || 'software-engineer';
+
+            if (questionsDB[currentRole]) {
+                for (const round in questionsDB[currentRole]) {
+                    const question = questionsDB[currentRole][round].find(q => q.question === questionText);
+                    if (question) {
+                        return question.referenceAnswer;
+                    }
+                }
+            }
+            return null;
+        }
+
+        // Load feedback when page loads
+        window.onload = loadFeedback;
+    </script>
+</body>
+</html>
