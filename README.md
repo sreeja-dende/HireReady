@@ -2,6 +2,16 @@
 
 HireReady is a comprehensive web application designed to help students prepare for placements through role-based practice, coding challenges, aptitude tests, and analytics.
 
+![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
+![JWT](https://img.shields.io/badge/JWT-000000?style=flat-square&logo=jsonwebtokens&logoColor=white)
+
+Related modules: [Aptitude Quiz](https://github.com/sreeja-dende/Aptitude-AI) · [AI Mock HR Interview](https://github.com/sreeja-dende/HR_MockInterview)
+
 ## Features
 
 ### Authentication & Role System
@@ -165,7 +175,7 @@ HireReady/
 
 ### Environment Variables
 
-Create a `.env` file in the backend directory:
+Copy `backend/.env.example` to `backend/.env`:
 
 ```
 MONGODB_URI=mongodb://localhost:27017/hireready
@@ -173,7 +183,7 @@ JWT_SECRET=your-secret-key-here
 PORT=3000
 ```
 
-For the frontend, create a `.env` file:
+For the frontend, copy `frontend/.env.example` to `frontend/.env`:
 
 ```
 VITE_API_BASE_URL=http://localhost:3001
