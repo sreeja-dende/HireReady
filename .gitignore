@@ -1,3 +1,19 @@
-frontend/uploads/6cb1b2ec623bb1c6baa4e35fab839390
+# Dependencies
+node_modules/
+
+# Environment files (never commit secrets)
+.env
+*.env
+!.env.example
+
+# Build output
+frontend/dist/
+
+# User uploads
 frontend/uploads/
-frontend/uploads/
+backend/uploads/
+
+# Logs / OS
+*.log
+.DS_Store
+Thumbs.db
